@@ -35,13 +35,18 @@ class Administrador extends CI_Controller {
 
 			$crud->columns('nombre','id_modalidad_curso', 'id_tema_curso', 'descripcion', 'fecha', 'duracion', 'dia_horario' , 'foto' , 'programa'  );
 
+ 
+			$crud->unset_texteditor('descripcion');
+
 			$crud->display_as('id_modalidad_curso','Modalidad del curso');
 			$crud->display_as('id_tema_curso','Tema del curso');
 
 			$crud->set_relation('id_modalidad_curso','curso_modalidad','descripcion');
-			$crud->set_relation('id_modalidad_curso','curso_tema','descripcion');
+			$crud->set_relation('id_tema_curso','curso_tema','descripcion');
 
 			$crud->set_field_upload('foto','assets/img/cursos');
+
+
  	
 			$output = $crud->render();
 

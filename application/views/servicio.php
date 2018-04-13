@@ -12,34 +12,49 @@
 						INFORMACION
 					</div>
 				</div>
-			</div>
-			<div class="col-lg-4" style="background-color: pink">
-				<div class="row">
-					<div class="col-lg-4" style="background-color: red">
-						FOTO
-					</div>
-					<div class="col-lg-8" style="background-color: grey">
-						INFORMACION
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-4" style="background-color: red">
-						FOTO
-					</div>
-					<div class="col-lg-8" style="background-color: grey">
-						INFORMACION
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-4" style="background-color: red">
-						FOTO
-					</div>
-					<div class="col-lg-8" style="background-color: grey">
-						INFORMACION
-					</div>
-				</div>
+			
+				
 			</div> 
+
+			<div class="col-lg-4" style="background-color: pink">
+				FORMULARIO
+			</div>
 		</div>
+		<div class="row">
+
+			<div class="col-lg-4" style="background-color: blue">
+				<div class="row">
+					<div class="col-lg-4" style="background-color: orange">
+						FOTO
+					</div>
+					<div class="col-lg-8" style="background-color: purple">
+						INFORMACION
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4" style="background-color: blue">
+				<div class="row">
+					<div class="col-lg-4" style="background-color: orange">
+						FOTO
+					</div>
+					<div class="col-lg-8" style="background-color: purple">
+						INFORMACION
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4" style="background-color: blue">
+				<div class="row">
+					<div class="col-lg-4" style="background-color: orange">
+						FOTO
+					</div>
+					<div class="col-lg-8" style="background-color: purple">
+						INFORMACION
+					</div>
+				</div>
+			</div>
+
+		</div>
+		 
 	 
 	</div>
  
