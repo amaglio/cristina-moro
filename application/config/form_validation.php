@@ -18,27 +18,17 @@ $config = array(
                                         )
                                 ),
 
-            'enviar_email' => array(
+            'buscar_cursos' => array(
                                     array(
-                                            'field' => 'nombre',
-                                            'label' => 'nombre',
-                                            'rules' => 'required|trim|xss_clean'
+                                            'field' => 'id_tema',
+                                            'label' => 'id_tema',
+                                            'rules' => 'trim|xss_clean|callback_validate_either'
                                         ),
                                     array(
-                                            'field' => 'apellido',
-                                            'label' => 'apellido',
-                                            'rules' => 'trim|xss_clean'
-                                        ),
-                                    array(
-                                            'field' => 'email',
-                                            'label' => 'email',
-                                            'rules' => 'required|trim|xss_clean'
-                                        ),
-                                    array(
-                                            'field' => 'mensaje',
-                                            'label' => 'mensaje',
-                                            'rules' => 'required|trim|xss_clean'
-                                        )
+                                            'field' => 'id_modalidad',
+                                            'label' => 'id_modalidad',
+                                            'rules' => 'trim|xss_clean|callback_validate_either'
+                                        ) 
                                 )
  
                                 

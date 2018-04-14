@@ -64,4 +64,51 @@
     <!-- Custom JavaScript for this theme -->
     <script src="<?=base_url()?>/assets/js/scrolling-nav.js"></script>
 
+    <!-- Jquery validate -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js" ></script>
+  	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/additional-methods.min.js" ></script>
+
+   	<script>
+            var q = jQuery.noConflict();
+    </script>
+
+
+
+  	<script language="javascript" type="text/javascript" >
+
+      
+		q(function(){
+
+			q("#cargando").hide();   
+			});
+
+		q(function(){
+
+		      q('#form_buscar_cursos').validate({
+
+		          rules :{
+
+						id_tema : {
+						  	require_from_group: [1, ".phone-group"]
+						},
+						id_modalidad : {
+						  	require_from_group: [1, ".phone-group"]
+						}
+		          },
+		          messages : {
+
+	                  	id_tema : {
+	                      require_from_group: "Debe seleccionar al menos un filtro"
+	                  	},
+	                  	id_modalidad : {
+	                      require_from_group: "Debe seleccionar al menos un filtro"
+	                  	}, 
+		          } 
+		      });    
+		}); 
+
+   
+
+    </script>
+
 </html>

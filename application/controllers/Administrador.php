@@ -67,7 +67,10 @@ class Administrador extends CI_Controller {
 			$crud->set_subject('Servicio SPA');
 			$crud->required_fields('titulo', 'id_tipo_servicio');
 
+
 			$crud->columns('titulo','descripcion', 'id_tipo_servicio', 'foto', 'home'  );
+
+			$crud->unset_texteditor('descripcion');
 
 			$crud->display_as('id_tipo_servicio','Tipo de servicio');
  
@@ -95,6 +98,7 @@ class Administrador extends CI_Controller {
 			$crud->required_fields('nombre', 'id_tipo_producto');
 
 			$crud->columns('nombre','descripcion', 'foto', 'id_tipo_producto', 'home'  );
+			$crud->unset_texteditor('descripcion');
 
 			$crud->display_as('id_tipo_producto','Tipo de producto');
  

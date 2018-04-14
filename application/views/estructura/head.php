@@ -16,24 +16,58 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    
 
+        <!-- Font Google-->
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         
         <script type="text/javascript">
                 CI_ROOT = "<?=base_url()?>";
         </script>
 
         <style type="text/css">
+
+          body
+          {
+            font-size: 14px;
+            font-family: 'Alegreya', sans-serif;;
+          }
           
           li.nav-item{
                 padding:  0px 15px !important;
           }
 
           img.thumbnail{
-            width: 200px;
-            height: 150px;
+            width: inherit;
+            min-height: 150px;
           }
 
           label{
             font-weight: bold;
+          }
+
+          label.error{
+            color:red;
+            font-size: 12px;
+          }
+
+          .div_buscador
+          {
+            padding: 1.25rem;
+            margin-top: 1.25rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid #eee;
+            /*border-left-width: .25rem;*/
+            border-radius: .25rem
+          }
+
+          .div_row
+          {
+            padding: 1.25rem;
+            margin-top: 1.25rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid #eee;
+            /*border-left-width: .25rem;*/
+            border-radius: .25rem
           }
 
           .form-group{
@@ -42,54 +76,54 @@
           
           /* footer */
           .index-social{
-    background-color:#2c2c2c;
-    color:#fff;
-}
-.link-area .fa-li{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    border:solid 1px #fff;
-    list-style-type:none;
-    margin:5px;
-    display:inline-block;
-}
-.index-social a{
-    color:#fff;
-    font-size:25px;
-    display:block;
-    float:left;
-    padding:10px;
-}
-.index-link h3{
-    text-align:center;
-   color:#f1f1f1;
-   text-align:left;
-   
-}
-.index-link{
-    background-color:#000;
-}
-.index-link ul{
-    padding:0px;
-}
-.index-link ul li{
-    list-style-type:none;
-}
-.index-link ul li a{
-  text-decoration:none;
-  font-size:16px;
-  color:#fff;
-  display:block;
-  padding:5px 0;
-  text-align:left;
-}
-.index-link ul li a:hover{
-     text-decoration:underline;
-}
-.copy-c{
-    padding-top:15px;
-}
+              background-color:#2c2c2c;
+              color:#fff;
+          }
+          .link-area .fa-li{
+              width:40px;
+              height:40px;
+              border-radius:50%;
+              border:solid 1px #fff;
+              list-style-type:none;
+              margin:5px;
+              display:inline-block;
+          }
+          .index-social a{
+              color:#fff;
+              font-size:25px;
+              display:block;
+              float:left;
+              padding:10px;
+          }
+          .index-link h3{
+              text-align:center;
+             color:#f1f1f1;
+             text-align:left;
+             
+          }
+          .index-link{
+              background-color:#000;
+          }
+          .index-link ul{
+              padding:0px;
+          }
+          .index-link ul li{
+              list-style-type:none;
+          }
+          .index-link ul li a{
+            text-decoration:none;
+            font-size:16px;
+            color:#fff;
+            display:block;
+            padding:5px 0;
+            text-align:left;
+          }
+          .index-link ul li a:hover{
+               text-decoration:underline;
+          }
+          .copy-c{
+              padding-top:15px;
+          }
 
         </style>
 
