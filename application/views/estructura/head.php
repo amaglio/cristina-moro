@@ -19,121 +19,21 @@
         <!-- Font Google-->
         <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-        
+        <link href="https://fonts.googleapis.com/css?family=Roboto"stylesheet">
+
         <script type="text/javascript">
                 CI_ROOT = "<?=base_url()?>";
         </script>
 
-        <style type="text/css">
-
-          body
-          {
-            font-size: 14px;
-            font-family: 'Alegreya', sans-serif;;
-          }
-          
-          li.nav-item{
-                padding:  0px 15px !important;
-          }
-
-          img.thumbnail{
-            width: inherit;
-            min-height: 150px;
-          }
-
-          label{
-            font-weight: bold;
-          }
-
-          label.error{
-            color:red;
-            font-size: 12px;
-          }
-
-          .div_buscador
-          {
-            padding: 1.25rem;
-            margin-top: 1.25rem;
-            margin-bottom: 1.25rem;
-            border: 1px solid #eee;
-            /*border-left-width: .25rem;*/
-            border-radius: .25rem
-          }
-
-          .div_row
-          {
-            padding: 1.25rem;
-            margin-top: 1.25rem;
-            margin-bottom: 1.25rem;
-            border: 1px solid #eee;
-            /*border-left-width: .25rem;*/
-            border-radius: .25rem
-          }
-
-          .form-group{
-            margin-bottom: 0px;
-          }
-          
-          /* footer */
-          .index-social{
-              background-color:#2c2c2c;
-              color:#fff;
-          }
-          .link-area .fa-li{
-              width:40px;
-              height:40px;
-              border-radius:50%;
-              border:solid 1px #fff;
-              list-style-type:none;
-              margin:5px;
-              display:inline-block;
-          }
-          .index-social a{
-              color:#fff;
-              font-size:25px;
-              display:block;
-              float:left;
-              padding:10px;
-          }
-          .index-link h3{
-              text-align:center;
-             color:#f1f1f1;
-             text-align:left;
-             
-          }
-          .index-link{
-              background-color:#000;
-          }
-          .index-link ul{
-              padding:0px;
-          }
-          .index-link ul li{
-              list-style-type:none;
-          }
-          .index-link ul li a{
-            text-decoration:none;
-            font-size:16px;
-            color:#fff;
-            display:block;
-            padding:5px 0;
-            text-align:left;
-          }
-          .index-link ul li a:hover{
-               text-decoration:underline;
-          }
-          .copy-c{
-              padding-top:15px;
-          }
-
-        </style>
-
+        <link href="<?=base_url()?>/assets/css/style_css.css" rel="stylesheet">
+ 
     </head>
     <body>
         <header>
           <div class="container">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <a class="navbar-brand" href="#">MORO SPA</a>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light   ">
+              <a class="navbar-brand" href="#"><img style="width: 70px"  src="<?=base_url()?>/assets/img/moro_logo.jpg"></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -142,26 +42,26 @@
 
             <ul class="navbar-nav mr-auto">
             </ul>
-
+          
             <ul class="navbar-nav">
  
-                <li class="nav-item active">
-                    <a href="<?=site_url('home/index')?>">HOME</a>
+                <li class="nav-item">
+                    <a class="link_menu <? echo ($this->uri->segment(1) == 'home')? 'active' : ' ' ;  ?>" id="home" href="<?=site_url('home/index')?>" >HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=site_url('servicio/index')?>">SERVICIOS SPA</a>
+                    <a class="link_menu <? echo ($this->uri->segment(1) == 'servicio')? 'active' : ' ' ;  ?>" id="servicio" href="<?=site_url('servicio/index')?>">SERVICIOS SPA</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=site_url('producto/index')?>">PRODUCTOS</a>
+                    <a class="link_menu <? echo ($this->uri->segment(1) == 'producto')? 'active' : ' ' ;  ?>" id="producto" href="<?=site_url('producto/index')?>">PRODUCTOS</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=site_url('curso/index')?>">CURSOS</a>
+                    <a class="link_menu <? echo ($this->uri->segment(1) == 'curso')? 'active' : ' ' ;  ?>" id="curso" href="<?=site_url('curso/index')?>">CURSOS</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=site_url('historia/index')?>">HISTORIA</a>
+                    <a class="link_menu <? echo ($this->uri->segment(1) == 'historia')? 'active' : ' ' ;  ?>" id="historia" href="<?=site_url('historia/index')?>">HISTORIA</a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?=site_url('contacto/index')?>">CONTACTO</a>
+                    <a class="link_menu <? echo ($this->uri->segment(1) == 'contacto')? 'active' : ' ' ;  ?>" id="contacto" href="<?=site_url('contacto/index')?>">CONTACTO</a>
                 </li>
                
             </ul>

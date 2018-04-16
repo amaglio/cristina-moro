@@ -34,7 +34,7 @@
 								</select>
 							</div>
 							<div class="form-group col-lg-2">
-								<button type="submit" class="btn btn-primary my-1">Buscar</button>
+								<button type="submit" class="btn btn-block btn-primary my-1"><i class="fa fa-search" style="color:white !important;"></i>Buscar</button>
 							</div>
 						</form>
 
@@ -43,7 +43,10 @@
 				</div>
 				
 					
-					<? foreach ($cursos as $row): ?>
+					<? foreach ($cursos as $row):
+
+							$id_curso = $row['id_curso'];
+					 ?>
 
 						<div class="row div_row" >
 							<div class="col-lg-4" >
@@ -51,8 +54,11 @@
 								<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/cursos/<?=$row['foto']?>">
 							</div>
 							<div class="col-lg-8" >
-		
-								<h5><?=$row['nombre']?></h5> 
+								
+								<a href='<?=site_url("curso/ver_curso/$id_curso")?>'>
+									<h5><?=$row['nombre']?></h5> 
+								</a>
+
 								<div class="form-group row">
 								    <label class="col-sm-2">Duracion</label>
 								    <div class="col-sm-3">

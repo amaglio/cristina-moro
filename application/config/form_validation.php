@@ -29,7 +29,25 @@ $config = array(
                                             'label' => 'id_modalidad',
                                             'rules' => 'trim|xss_clean|callback_validate_either'
                                         ) 
-                                )
+                                ),
+
+             'buscar_servicios' => array(
+
+                                    array(
+                                            'field' => 'id_tipo_servicio',
+                                            'label' => 'id_tipo_servicio',
+                                            'rules' => 'trim|xss_clean|required'
+                                        ) 
+                                ),
+
+             'buscar_productos' => array(
+
+                                    array(
+                                            'field' => 'id_producto_tipo',
+                                            'label' => 'id_producto_tipo',
+                                            'rules' => 'trim|xss_clean|required'
+                                        ) 
+                                ),
  
                                 
 );

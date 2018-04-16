@@ -1,0 +1,220 @@
+/*
+
+  CSS HOME MORO
+
+*/
+
+/* LISTA CURSOS HOME */
+    
+    /*
+    .list {
+      height: 300px;
+      position: relative;
+      width: 100%;
+    } */
+
+    .list {
+    height: auto;
+    position: relative;
+    width: 100%;
+    /* background-color: red; */
+    min-height: 268px;
+}
+    
+    .cities-list{
+      height: inherit;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .cities-list a {
+      width: 100%;
+      text-decoration: none;
+      display: block;
+      color: #000;
+    }
+    
+    .list-control {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      font-size: 20px;
+      color: #fff;
+      text-align: center;
+      text-shadow: 0 1px 2px rgba(0,0,0,.6);
+      background-color: rgba(0,0,0,0);
+      filter: alpha(opacity=50);
+      opacity: .4;
+    }
+    .list .up{
+      top: 0;
+      background: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+      
+    }
+    
+    .list .up:hover{
+      top: 0;
+      background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+      
+    }
+    .list .down{
+      bottom: 0;
+      background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+    }
+    
+    .list .down:hover
+    {
+      bottom: 0;
+      background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+    }
+  
+    .control-height
+    {
+      height: 45px;
+      background-color: #97700075 !important
+    }
+    
+    .list .list-group
+    {
+      margin-bottom: 0;
+    }
+    
+    .arrow
+    {
+      top: 13px;
+    }
+
+ 	  .control-height
+    {
+      height: 20px !important
+    }
+
+/* --- END LISTA CURSOS HOME --- */
+
+
+	
+
+	.bg-light 
+	{
+	  	background-color: white !important;
+	}
+
+	.fa
+	{
+	    color: #967100 !important;
+	}
+
+
+
+	
+
+
+	/* ---------- */
+
+
+    /* varios */ 
+    .active{
+        color: #966f00;
+    }
+
+    .list-control{
+          position: relative;
+    }
+    
+    a.link_menu:hover { 
+        color: #966f00;
+        text-decoration: none;
+    }
+
+    h5{
+       color: #966f00;
+    }
+
+    a:hover {
+      text-decoration: none !important;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #957100;
+        border-color: #694e03;
+    }
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #694e03;
+        border-color: #694e03;
+    }
+
+    .imagen_carrusel{ 
+  	   height:350px; 
+  	   background-size:cover;
+  	   background-position: center center;
+  	   width: inherit;
+  	}
+
+    .titulo_slider
+    {
+        position: absolute;
+        top: 10%;
+        /* left: 10%; */
+        font-size: 30px;
+        background-color: #94720078;
+        padding: 30px 20px;
+
+        color: white;
+        text-shadow: blanchedalmond;
+        text-shadow: 0 0 3px #000000, 0 0 2px #000000;
+        width: -webkit-fill-available;
+        margin-right: 30px;
+
+        border-bottom: : 1px solid #9a710052;
+        border-top: 1px solid #9a710052;
+    }
+
+	.row-striped:nth-of-type(odd){
+	  /*background-color: #efefef;*/
+    background-color: #ffffff;
+	  border-left: 4px #000000 solid;
+
+	}
+
+	.row-striped:nth-of-type(even){
+	  background-color: #ffffff;
+	  border-left: 4px #efefef solid;
+	}
+
+	.row-striped {
+	    padding: 5px 0;
+      border-bottom: #ece4d0 1px solid;
+	}
+
+	.list-inline{
+		margin-bottom:0px;
+	}
+
+	.titulo_curso{
+		font-size: 13px;
+	}
+
+	.list-inline-item{
+		font-size: 12px;
+	}
+
+	.badge{
+		padding: 10px;
+    background-color: #ece4d0;
+    color: #1c2025;
+	}

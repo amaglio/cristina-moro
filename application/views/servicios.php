@@ -1,8 +1,7 @@
-<section id="servicios">
-	
  
+<section id="servicios">
 
-	<section id="productos">	
+	<section id="servicios_buscador">	
 		<div class="container">
 			<div class="row div_buscador">
 				<div class="col-lg-12" >
@@ -20,7 +19,7 @@
 								</select>
 							</div>
 							<div class="form-group col-lg-2">
-								<button type="submit" class="btn btn-primary my-1">Buscar</button>
+								<button type="submit" class="btn btn-block btn-primary my-1"><i class="fa fa-search" style="color:white !important;"></i> Buscar</button>
 							</div>
 					</form>
 				</div>
@@ -35,7 +34,10 @@
 		<div class="container">
  
 
-			<?  for ($i=0; $i < count($servicios_spa) ; $i++): ?>
+			<?  for ($i=0; $i < count($servicios_spa) ; $i++): 
+
+					$id_servicio = $servicios_spa[$i]['id_servicio_spa'];
+				?>
 
 				<div class="row div_row">
 
@@ -45,7 +47,9 @@
 								<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/servicios/<?=$servicios_spa[$i]['foto']?>">
 							</div>
 							<div class="col-lg-8" >
-								<h5><?=$servicios_spa[$i]['titulo']?></h5> 
+								<a href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
+									<h5><?=$servicios_spa[$i]['titulo']?></h5> 
+								</a>
 								<div class="form-group row">
 								    <label class="col-sm-2">Tipo</label>
 								    <div class="col-sm-3">
@@ -65,7 +69,10 @@
 
 					<?  $i++;
 
-						if( isset($servicios_spa[$i]) ): ?>
+						if( isset($servicios_spa[$i]) ): 
+
+							$id_servicio = $servicios_spa[$i]['id_servicio_spa'];
+							?>
 
 							<div class="col-lg-6" >
 								<div class="row">
@@ -73,7 +80,9 @@
 										<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/servicios/<?=$servicios_spa[$i]['foto']?>">
 									</div>
 									<div class="col-lg-8" >
-										<h5><?=$servicios_spa[$i]['titulo']?></h5> 
+										<a href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
+											<h5><?=$servicios_spa[$i]['titulo']?></h5> 
+										</a>
 										<div class="form-group row">
 										    <label class="col-sm-2">Tipo</label>
 										    <div class="col-sm-8">

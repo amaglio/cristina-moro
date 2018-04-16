@@ -1,12 +1,10 @@
 <section id="productos">
-	
- 
 
 	<section id="productos">	
 		<div class="container">
 			<div class="row div_buscador">
 				<div class="col-lg-12" >
-				  	<form id="form_buscar_productos" name="form_buscar_productos" class="form-inline" method="post" action="<?=site_url('servicio/buscar_servicios')?>">
+				  	<form id="form_buscar_productos" name="form_buscar_productos" class="form-inline" method="post" action="<?=site_url('producto/buscar_productos')?>">
 							<div class="form-group col-lg-5" >
 								<label for="id_producto_tipo" class="col-lg-2">Tipo</label>
 								<select class="custom-select col-lg-8 phone-group" id="id_producto_tipo" name="id_producto_tipo">
@@ -20,7 +18,7 @@
 								</select>
 							</div>
 							<div class="form-group col-lg-2">
-								<button type="submit" class="btn btn-primary my-1">Buscar</button>
+								<button type="submit" class="btn btn-block btn-primary my-1"> <i class="fa fa-search" style="color:white !important;"></i> Buscar</button>
 							</div>
 					</form>
 				</div>
@@ -35,7 +33,10 @@
  
 		<div class="container">
 
-			<?  for ($i=0; $i < count($productos) ; $i++): ?>
+			<?  for ($i=0; $i < count($productos) ; $i++): 
+
+					$id_producto = $productos[$i]['id_producto'];
+			?>
 
 				<div class="row div_row">
 
@@ -44,8 +45,10 @@
 							<div class="col-lg-6" >
 								<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/productos/<?=$productos[$i]['foto']?>">
 							</div>
-							<div class="col-lg-5" >
-								<h5><?=$productos[$i]['nombre']?></h5> 
+							<div class="col-lg-6" >
+								<a href='<?=site_url("producto/ver_producto/$id_producto")?>'>
+									<h5><?=$productos[$i]['nombre']?></h5> 
+								</a>
 								 
 								<div class="form-group row">
 									<div class="col-sm-12">
@@ -58,16 +61,21 @@
 
 					<?  $i++;
 
-						if( isset($productos[$i]) ): ?>
+						if( isset($productos[$i]) ): 
+
+							$id_producto = $productos[$i]['id_producto'];
+							?>
 
 							<div class="col-lg-4" >
 								<div class="row">
 									<div class="col-lg-6" >
 										<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/productos/<?=$productos[$i]['foto']?>">
 									</div>
-									<div class="col-lg-5" >
-										<h5><?=$productos[$i]['nombre']?></h5> 
-										 
+									<div class="col-lg-6" >
+										<a href='<?=site_url("producto/ver_producto/$id_producto")?>'>
+											<h5><?=$productos[$i]['nombre']?></h5> 
+										</a>
+												 
 										<div class="form-group row">
 											<div class="col-sm-12">
 										    	<?=$productos[$i]['descripcion']?>
@@ -82,15 +90,21 @@
 
 					<?  $i++;
 
-						if( isset($productos[$i]) ): ?>
+						if( isset($productos[$i]) ): 
+
+							$id_producto = $productos[$i]['id_producto'];
+
+							?>
 
 							<div class="col-lg-4" >
 								<div class="row">
 									<div class="col-lg-6" >
 										<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/productos/<?=$productos[$i]['foto']?>">
 									</div>
-									<div class="col-lg-5" >
-										<h5><?=$productos[$i]['nombre']?></h5> 
+									<div class="col-lg-6" >
+										<a href='<?=site_url("producto/ver_producto/$id_producto")?>'>
+											<h5><?=$productos[$i]['nombre']?></h5> 
+										</a>
 										 
 										<div class="form-group row">
 											<div class="col-sm-12">
@@ -104,23 +118,7 @@
 
 					<?	endif;	?>
 
-					<?/*  $i++;
-
-						if( isset($productos[$i]) ): ?>
-
-							<div class="col-lg-3" >
-								<div class="row">
-									<div class="col-lg-4" >
-										<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/productos/<?=$productos[$i]['foto']?>">
-									</div>
-									<div class="col-lg-8" >
-										Producto
-									</div>
-								</div>  
-							</div>
  
-
-					<?	endif;	*/?>
 
 
 				</div>

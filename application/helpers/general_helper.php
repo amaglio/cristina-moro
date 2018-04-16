@@ -81,3 +81,12 @@ if(!function_exists('enviar_email'))
         return $mensaje_resultado;
     }
 }
+
+// Mensaje de error de las variables flash session
+if(!function_exists('active_url'))
+{
+    function active_url($uri)
+    {
+        echo $this->uri->segment(1) ;
+    }
+}

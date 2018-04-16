@@ -20,18 +20,20 @@ class Curso extends CI_Controller {
 
 	public function ver_curso($id_curso)
 	{
- 		$data['informacion_curso'] = $this->Curso_model->get_informacion_curso($id_curso);
+ 		$data['curso'] = $this->Curso_model->get_informacion_curso($id_curso);
+ 		$data['cursos_tema'] = $this->Curso_model->get_tema_curso();
+		$data['cursos_modalidad'] = $this->Curso_model->get_modalidad_curso();
+
+		$data['cursos'] = $this->Curso_model->get_curso_relacionados($data['curso']['id_modalidad_curso'],$data['curso']['id_tema_curso'],$id_curso);
 
  		$this->load->view('estructura/head.php' );
-		$this->load->view('ver_curso.php');
+		$this->load->view('curso.php',$data);
 		$this->load->view('estructura/footer.php' );
 	}
  	
 	public function buscar_cursos()
 	{
  		chrome_log("cursos/buscar_cursos");
-
- 		 
 
 		if ($this->form_validation->run('buscar_cursos') == FALSE):
 
@@ -42,14 +44,12 @@ class Curso extends CI_Controller {
 		else:
 
 			chrome_log("Paso validacion");
-			$cursos_encontrados = $this->Curso_model->buscar_cursos($this->input->post());
-	 
-			if( $cursos_encontrados ):
-
-				$data['cursos_encontrados'] = $cursos_encontrados;
-
-			endif; 
+			$data['cursos'] = $this->Curso_model->buscar_cursos($this->input->post());
+ 
+  
 			
+			$data['cursos_tema'] = $this->Curso_model->get_tema_curso();
+			$data['cursos_modalidad'] = $this->Curso_model->get_modalidad_curso();
 			$this->load->view('estructura/head.php' );
 			$this->load->view('cursos_resultados.php',$data);
 			$this->load->view('estructura/footer.php' );
