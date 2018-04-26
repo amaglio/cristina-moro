@@ -19,7 +19,7 @@
         <!-- Font Google-->
         <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto"stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"">
 
         <script type="text/javascript">
                 CI_ROOT = "<?=base_url()?>";

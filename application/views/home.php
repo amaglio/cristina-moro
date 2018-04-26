@@ -15,9 +15,9 @@
 
 			            <!-- Indicators -->
 			            <ul class="carousel-indicators">
-			              <li data-target="#demo" data-slide-to="0" class="active"></li>
-			              <li data-target="#demo" data-slide-to="1"></li>
-			              <li data-target="#demo" data-slide-to="2"></li>
+							<li data-target ="#demo" data-slide-to="0" class="active"></li>
+							<li data-target ="#demo" data-slide-to="1"></li>
+							<li data-target ="#demo" data-slide-to="2"></li>
 			            </ul>
  
 			            <div class="carousel-inner" style="margin-top: 5px;">
@@ -44,33 +44,9 @@
 					              	</div>
 
 			            	<?	endforeach; ?>	
-
-			            	<?/*
-			              <div class="carousel-item active">               
-			                    <div class="col-lg-12 mx-auto ">
-			                       <img class="imagen_carrusel" src="<?=base_url()?>/assets/img/carrusel/aaaa.jpg">
-			                    </div>
-			              </div>
-			              <div class="carousel-item">
-			                 	<div class="col-lg-12 mx-auto ">
-			                       <img class="imagen_carrusel" src="<?=base_url()?>/assets/img/carrusel/spa-toulouse-centre.jpg">
-			                    </div>
-			              </div>
-			              <div class="carousel-item">
-			               		<div class="col-lg-12 mx-auto ">
-			                       <img class="imagen_carrusel" src="<?=base_url()?>/assets/img/carrusel/foto3.jpeg">
-			                    </div>
-			              </div>*/?>
+ 
 			            </div> 
-
-			            <!-- Left and right controls
-			            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-			              <span class="carousel-control-prev-icon"></span>
-			            </a>
-			            <a class="carousel-control-next" href="#demo" data-slide="next">
-			              <span class="carousel-control-next-icon"></span>
-			            </a> -->
-
+ 
 			        </div>
 
 				</div>
@@ -79,7 +55,7 @@
 				<div class="col-lg-4" >
 					<div class="country">
  
- 						<h5> Nuestros próximos cursos </h5>
+ 						<h5 id="titulo_curso"> Nuestros próximos cursos </h5>
 	            		<a class="list-control control-height up" href="#" >
 							<i class="fa fa-angle-up " style="width: -webkit-fill-available; "></i> 
 						</a>
@@ -90,7 +66,10 @@
  
 								<div class="list-group">
  									
-									<? foreach ($cursos_home as $row_cursos): ?>
+									<? foreach ($cursos_home as $row_cursos): 
+
+										$id_curso = $row_cursos['id_curso'];
+									?>
 
 										<div class=" row row-striped ">
 											<div class="col-3 text-right">
@@ -102,9 +81,15 @@
 												</span> 
 											</div>
 											<div class="col-9">
-												<span class="text-uppercase titulo_curso"><strong><?=$row_cursos['nombre']?></strong></span>
+												<span class="text-uppercase titulo_curso">
+												 
+														<a class="nombre_curso" href='<?=site_url("curso/ver_curso/$id_curso")?>'><?=$row_cursos['nombre']?></a>
+												 
+												</span>
 												<ul class="list-inline">
-												    <li class="list-inline-item"><i class="fa fa-angle-right aria-hidden="true"></i> <?=$row_cursos['dia_horario']?></li>
+												    <li class="list-inline-item">
+												    	<i class="fa fa-angle-right aria-hidden="true"></i> <?=$row_cursos['dia_horario']?>
+												    </li>
 												 
 												</ul>
 												 
@@ -113,106 +98,6 @@
 
 
 									<? endforeach; ?>
-
-
-									<?/*
-									<div class=" row row-striped ">
-										<div class="col-2 text-right">
-											<span class="badge badge-secondary" style="font-size: 15px">23</span> 
-										</div>
-										<div class="col-10">
-											<span class="text-uppercase titulo_curso"><strong>Ice Cream Social</strong></span>
-											<ul class="list-inline">
-											    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</li>
-											 
-											</ul>
-											 
-										</div>
-									</div>
-
-									<div class=" row row-striped ">
-										<div class="col-2 text-right">
-											<span class="badge badge-secondary" style="font-size: 15px">23</span> 
-										</div>
-										<div class="col-10">
-											<span class="text-uppercase titulo_curso"><strong>Ice Cream Social</strong></span>
-											<ul class="list-inline">
-											    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</li>
-											 
-											</ul>
-											 
-										</div>
-									</div>
-
-									<div class=" row row-striped ">
-										<div class="col-2 text-right">
-											<span class="badge badge-secondary" style="font-size: 15px">23</span> 
-										</div>
-										<div class="col-10">
-											<span class="text-uppercase titulo_curso"><strong>Ice Cream Social</strong></span>
-											<ul class="list-inline">
-											    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</li>
-											 
-											</ul>
-											 
-										</div>
-									</div>
-
-									<div class=" row row-striped ">
-										<div class="col-2 text-right">
-											<span class="badge badge-secondary" style="font-size: 15px">23</span> 
-										</div>
-										<div class="col-10">
-											<span class="text-uppercase titulo_curso"><strong>Ice Cream Social</strong></span>
-											<ul class="list-inline">
-											    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</li>
-											 
-											</ul>
-											 
-										</div>
-									</div>
-
-									<div class=" row row-striped ">
-										<div class="col-2 text-right">
-											<span class="badge badge-secondary" style="font-size: 15px">23</span> 
-										</div>
-										<div class="col-10">
-											<span class="text-uppercase titulo_curso"><strong>Ice Cream Social</strong></span>
-											<ul class="list-inline">
-											    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</li>
-											 
-											</ul>
-											 
-										</div>
-									</div>
-
-									<div class=" row row-striped ">
-										<div class="col-2 text-right">
-											<span class="badge badge-secondary" style="font-size: 15px">23</span> 
-										</div>
-										<div class="col-10">
-											<span class="text-uppercase titulo_curso"><strong>Ice Cream Social</strong></span>
-											<ul class="list-inline">
-											    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</li>
-											 
-											</ul>
-											 
-										</div>
-									</div>
-
-									<div class=" row row-striped ">
-										<div class="col-2 text-right">
-											<span class="badge badge-secondary" style="font-size: 15px">23</span> 
-										</div>
-										<div class="col-10">
-											<span class="text-uppercase titulo_curso"><strong>Ice Cream Social</strong></span>
-											<ul class="list-inline">
-											    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> Monday</li>
-											 
-											</ul>
-											 
-										</div>
-									</div>*/ ?>
 
 								</div>
 
@@ -249,9 +134,15 @@
 							</div>
 							<div class="col-lg-6" >
 								
-								<a href='<?=site_url("producto/ver_producto/$id_producto")?>'>
-									<h5><?=$productos[$i]['nombre']?></h5> 
+								<a class="nombre_producto" href='<?=site_url("producto/ver_producto/$id_producto")?>'>
+										<?=$productos[$i]['nombre']?>	
 								</a>
+
+								<div class="form-group row">
+									<div class="col-sm-12">
+								    	<label>Tipo: </label> <?=$productos[$i]['descripcion_tipo_producto']?>
+								   </div>
+								</div>
 
 								<div class="form-group row">
 									<div class="col-sm-12">
@@ -274,10 +165,14 @@
 										<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/productos/<?=$productos[$i]['foto']?>">
 									</div>
 									<div class="col-lg-6" >
-										<a href='<?=site_url("producto/ver_producto/$id_producto")?>'>
-											<h5><?=$productos[$i]['nombre']?></h5> 
+										<a class="nombre_producto" href='<?=site_url("producto/ver_producto/$id_producto")?>'>
+											 <?=$productos[$i]['nombre']?> 
 										</a>
-										 
+										<div class="form-group row">
+											<div class="col-sm-12">
+										    	<label>Tipo: </label> <?=$productos[$i]['descripcion_tipo_producto']?>
+										   </div>
+										</div> 
 										<div class="form-group row">
 											<div class="col-sm-12">
 										    	<?=$productos[$i]['descripcion']?>
@@ -301,10 +196,14 @@
 										<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/productos/<?=$productos[$i]['foto']?>">
 									</div>
 									<div class="col-lg-6" >
-										<a href='<?=site_url("producto/ver_producto/$id_producto")?>'>
-											<h5><?=$productos[$i]['nombre']?></h5> 
+										<a class="nombre_producto" href='<?=site_url("producto/ver_producto/$id_producto")?>'>
+											 <?=$productos[$i]['nombre']?> 
 										</a>
-										 
+										<div class="form-group row">
+											<div class="col-sm-12">
+										    	<label>Tipo: </label> <?=$productos[$i]['descripcion_tipo_producto']?>
+										   </div>
+										</div> 
 										<div class="form-group row">
 											<div class="col-sm-12">
 										    	<?=$productos[$i]['descripcion']?>
@@ -349,8 +248,8 @@
 							</div>
 							<div class="col-lg-8" >
 								
-								<a href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
-									<h5><?=$servicios_spa[$i]['titulo']?></h5> 
+								<a class="nombre_servicio" href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
+									 <?=$servicios_spa[$i]['titulo']?>  
 								</a>
 								<div class="form-group row">
 								    <label class="col-sm-2">Tipo</label>
@@ -382,8 +281,8 @@
 										<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/servicios/<?=$servicios_spa[$i]['foto']?>">
 									</div>
 									<div class="col-lg-8" >
-										<a href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
-											<h5><?=$servicios_spa[$i]['titulo']?></h5> 
+										<a class="nombre_servicio" href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
+											<?=$servicios_spa[$i]['titulo']?>	
 										</a> 
 										<div class="form-group row">
 										    <label class="col-sm-2">Tipo</label>

@@ -19,7 +19,7 @@ img.thumbnail
 {
     width: inherit;
     height: 150px;
-    border-color: #9473015c !important
+    border-color: #b587385c !important
 }
 
 
@@ -51,7 +51,7 @@ img.thumbnail
 
 .active
 {
-    color: #966f00;
+    color: #b58738;
 }
 
 .list-control
@@ -62,23 +62,23 @@ img.thumbnail
 
 a.link_menu:hover 
 { 
-    color: #966f00;
+    color: #b58738;
     text-decoration: none;
 }
 
 h5  {
-    color: #966f00;
+    color: #b58738;
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #957100;
-    border-color: #694e03;
+       color: #fff;
+    background-color: #b68838;
+    border-color: #826027;
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #694e03;
+    background-color: #a97d32;
     border-color: #694e03;
 }
 
@@ -98,7 +98,7 @@ h5  {
 
     a.link_menu.active  
     {
-        color: #937000 !important;
+        color: #b58738 !important;
     }
 
     .bg-light 
@@ -108,7 +108,7 @@ h5  {
 
     .fa
     {
-        color: #967100 !important;
+        color: #b58738 !important;
     }
 
 
@@ -128,7 +128,7 @@ h5  {
 
     .footer_seccion
     {
-        color: #947301 !important;
+        color: #b58738 !important;
     }
 
     .footer_link_util
@@ -143,6 +143,18 @@ h5  {
     font-weight: 500;
     }
 
+    .foto_historia
+    {
+        width: inherit;
+        height: 320px;
+    }
+
+    .img-spa-historia
+    {
+         width: inherit;
+        height: 250px;
+    }
+
 /* --- END FOOTER --- */
 
 li.nav-item 
@@ -153,7 +165,7 @@ li.nav-item
 
 a.link_menu.active  
 {
-    color: #937000 !important;
+    color: #b58738 !important;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
