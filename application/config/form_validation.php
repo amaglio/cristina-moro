@@ -40,7 +40,7 @@ $config = array(
                                         ) 
                                 ),
 
-             'buscar_productos' => array(
+            'buscar_productos' => array(
 
                                     array(
                                             'field' => 'id_producto_tipo',
@@ -48,8 +48,50 @@ $config = array(
                                             'rules' => 'trim|xss_clean|required'
                                         ) 
                                 ),
- 
-                                
+            
+            'procesar_contacto' => array(
+
+                                    array(
+                                            'field' => 'nombre',
+                                            'label' => 'nombre',
+                                            'rules' => 'trim|xss_clean|required'
+                                        ),
+                                    array(
+                                            'field' => 'apellido',
+                                            'label' => 'apellido',
+                                            'rules' => 'trim|xss_clean|required'
+                                        ),
+                                    array(
+                                            'field' => 'email',
+                                            'label' => 'email',
+                                            'rules' => 'trim|xss_clean|required'
+                                        )  
+                                ),
+
+                'ver_curso' => array(
+
+                                        array(
+                                                'field' => 'id_curso',
+                                                'label' => 'id_curso',
+                                                'rules' => 'required|trim|xss_clean|numeric|callback_comprobar_curso_existente'
+                                            ) 
+                                ),
+                'ver_producto' => array(
+
+                                        array(
+                                                'field' => 'id_producto',
+                                                'label' => 'id_producto',
+                                                'rules' => 'required|trim|xss_clean|numeric|callback_comprobar_producto_existente'
+                                            ) 
+                                ),
+                'ver_servicio' => array(
+
+                                        array(
+                                                'field' => 'id_servicio',
+                                                'label' => 'id_servicio',
+                                                'rules' => 'required|trim|xss_clean|numeric|callback_comprobar_servicio_existente'
+                                            ) 
+                                ),
 );
 
 

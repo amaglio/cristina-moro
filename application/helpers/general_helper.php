@@ -20,65 +20,103 @@ if(!function_exists('mensaje_resultado'))
 
 if(!function_exists('enviar_email'))
 {
-    function enviar_email($email_to )
+    function enviar_email($array)
     {   
         $CI =& get_instance();
 
         $CI->load->library("email"); 
+        $CI->load->model('Curso_model');
+        $CI->load->model('Producto_model');
+        $CI->load->model('Servicio_model');
 
-        $configuracion_ucema = array(
-            'protocol' => 'smtp',
-            'smtp_host' => '10.0.0.3',
-            'smtp_port' => 25,
-            'smtp_user' => '',
-            'smtp_pass' => '',
-            'mailtype' => 'html',
-            'charset' => 'utf-8',
-            'newline' => "\r\n"
-        );
+        /* Busco informacion de donde pregunto , sino es de contacto */
+
+        $url_referer = str_replace( base_url() , '', $_SERVER['HTTP_REFERER'] );
+
+        $url_array = explode("/", $url_referer);
+ 
+        switch ($url_array[1]) 
+        {
+            case 'curso':
+                $row = $CI->Curso_model->get_informacion_curso($url_array[3]);
+           
+                $item = $row['nombre'];
+                break;
+            
+            case 'producto':
+                $row = $CI->Producto_model->get_informacion_producto($url_array[3]);
+     
+                $item = $row['nombre'];
+                break;
+
+            case 'servicio':
+                $row = $CI->Servicio_model->get_informacion_servicio($url_array[3]);
+ 
+                $item = $row['titulo'];
+                break;
+            
+        }
+
+        /*----------------------------------------------------------*/
+
+        $configuracion = array(
+                'protocol' => 'smtp',
+                'smtp_host' => 'ssl://smtp.googlemail.com',
+                'smtp_port' => 465,
+                'smtp_user' => 'digipayargentina@gmail.com',
+                'smtp_pass' => 'digipay2016',
+                'mailtype' => 'html',
+                'charset' => 'utf-8',
+                'newline' => "\r\n",
+                 'smtp_timeout' => 30,
+            );
 
         //Cargamos la configuración 
 
-        $CI->email->initialize($configuracion_ucema);
-        $CI->email->from($email_operador,  $nombre_operador);
-        $CI->email->subject($subject);
-        $mensaje_email = '';
+        $CI->email->initialize($configuracion);
+        $CI->email->from("info@morospa.com");
+        $CI->email->subject("Moro SPA - Contacto web");
 
-        $texto = html_entity_decode( $texto , ENT_QUOTES, "UTF-8");
-       
-        $CI->email->to($email_to); 
+        //$CI->email->to("info@cristinamoro.com.ar");
 
-        // REEMPLAZAMOS LAS MARCAS EN EL EMAIL
+        $CI->email->cc('adrian.magliola@gmail.com');
 
-        $texto_modificado = $texto;
+        $mensaje = "";
 
-  
-        $texto_modificado = str_replace("[Nombre y Apellido operador]", $nombre_operador, $texto_modificado );
-        $texto_modificado = str_replace("[Email Operador]", $email_operador, $texto_modificado );
-        $texto_modificado = str_replace("[Fecha envio]", date("d/m/Y") , $texto_modificado );
-        $texto_modificado = str_replace("[Nombre usuario]", $nombre_persona , $texto_modificado );
+        $mensaje .= "Nombre: ".$array['nombre']."<br>";
+        $mensaje .= "Apellido: ".$array['apellido']."<br>";
+        $mensaje .= "Email: ".$array['email']."<br>";
 
-        //echo $texto_modificado;
-             
+        if($array['telefono'])
+            $mensaje .= "Telefono: ".$array['telefono']."<br>";
 
-        $CI->email->message($texto_modificado);
-        
-        /*
+        if($array['ubicacion'])
+            $mensaje .= "Ubicacion: ".$array['ubicacion']."<br>";
+
+        if($array['comentario'])
+            $mensaje .= "Comentario: ".$array['comentario']."<br>"; 
+
+
+        $mensaje .= "Url: ".$url_referer."<br>";
+
+        if($item)
+            $mensaje .= "Item: ".$item."<br>";
+
+
+        $CI->email->message($mensaje);
+
         if( $CI->email->send() ):
 
-            chrome_log("ENVIO EL EMAIL"); 
-            $mensaje_resultado = "<span> &#9658; El email a ".$email_to." fue enviado exitosamente. </span> <br>";
-         
+            chrome_log("ENVIO EL EMAIL");  
+            $return["error"] = false;
+
         else:
             
-            chrome_log("NO ENVIO EL EMAIL");
-            $mensaje_resultado = "<span> &#9658; El email a ".$email_to." NO fue enviado exitosamente. </span> <br>";
-        
-        endif; */
+            chrome_log("NO ENVIO EL EMAIL"); 
+            $return["error"] = true;
+            
 
-         $mensaje_resultado = "<span> &#9658; El email a ".$email_to." fue enviado exitosamente. </span> <br>";
-
-        return $mensaje_resultado;
+        endif;
     }
 }
 
@@ -88,5 +126,63 @@ if(!function_exists('active_url'))
     function active_url($uri)
     {
         echo $this->uri->segment(1) ;
+    }
+}
+
+// Mensaje de error de las variables flash session
+if(!function_exists('ver_avales'))
+{
+    function ver_avales()
+    { ?>
+        
+        <div class="row">
+            <div class="col-4 col-md-12 "   >
+                <img class="img-rounded img-thumbnail thumbnail avales" src="<?=base_url()?>assets/img/avales/centro_internacional.png">
+            </div>
+       
+         
+            <div class="col-4 col-md-12 "  >
+                <img class="img-rounded img-thumbnail thumbnail avales" src="<?=base_url()?>assets/img/avales/federacion_argentina.jpeg">
+            </div>
+       
+         
+            <div class="col-4 col-md-12 "  >
+                <img class="img-rounded img-thumbnail thumbnail avales" src="<?=base_url()?>assets/img/avales/acyeba.jpg">
+            </div>
+        </div>
+       
+    <? 
+    }
+}
+
+// Mensaje de error de las variables flash session
+if(!function_exists('ver_formulario_contacto'))
+{
+    function ver_formulario_contacto()
+    { ?>
+        <label> Informes y consultas </label>
+        <form id="form_contacto" name="form_contacto" method="post" action="<?=site_url('contacto/procesar_contacto')?>">
+            <div class="form-group div_contacto_form"> 
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre *">
+            </div>
+            <div class="form-group div_contacto_form"> 
+                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido *">
+            </div>
+            <div class="form-group div_contacto_form"> 
+                <input type="text" class="form-control" id="email" name="email" placeholder="Email *">
+            </div>
+            <div class="form-group div_contacto_form"> 
+                <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono celular y/o fijo">
+            </div>
+            <div class="form-group div_contacto_form"> 
+                <input type="text" class="form-control" id="ubicacion" name="ubicacion" placeholder="Localidad y país">
+            </div>
+            <div class="form-group div_contacto_form"> 
+                <textarea class="form-control" id="comentario" name="comentario" placeholder="Comentario"></textarea>   
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+        </form>
+       
+    <? 
     }
 }

@@ -274,7 +274,8 @@ class grocery_CRUD_Field_Types
 				$value = $this->character_limiter($value,$this->character_limiter,"...");
 			break;
 			case 'text':
-				$value = $this->character_limiter(strip_tags($value),$this->character_limiter,"...");
+				//$value = $this->character_limiter(strip_tags($value),$this->character_limiter,"...");
+				$value = $this->character_limiter(strip_tags($value),10,"...");
 			break;
 			case 'date':
 				if(!empty($value) && $value != '0000-00-00' && $value != '1970-01-01')

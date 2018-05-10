@@ -4,6 +4,8 @@
 
 		<div class="container">
 
+			
+
 			<!-- BUSCADOR DE PRODUCTOS -->
 			<div class="row div_buscador">
 				<div class="col-lg-12" >
@@ -40,8 +42,7 @@
 							 
 								<h5><?=$producto['nombre']?></h5>
 						 
-							<div class="form-group row">
-							    <label class="col-sm-2">Tipo</label>
+							<div class="form-group row"> 
 							    <div class="col-sm-10">
 							     	<?=$producto['descripcion_tipo_producto']?>
 							    </div>
@@ -58,17 +59,7 @@
 				<!-- Contacto -->
 				<div class="col-lg-4">
 
-					<form name="form_contacto" id="form_contacto" method="post" action="<?=site_url('contacto/enviar_contado')?>" >
-		 				
-		 				<input id="nombre_apellido" type="text" class="form-control" name="nombre_apellido" placeholder="Nombre y apellido *"> 
-		 				<input id="email" type="text" class="form-control" name="email" placeholder="Email *">  
-
-		 				<input id="telefono" type="text" class="form-control" name="telefono" placeholder="Telefono"> 
-
-		 				<textarea id="mensaje" class="form-control" name="mensaje" placeholder="Mensaje"></textarea> 
-		 				<button class="btn btn-primary btn-block"  >Enviar</button>
-
-					</form>
+					 <?php ver_formulario_contacto(); ?>
 
 				</div>
 

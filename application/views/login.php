@@ -58,7 +58,7 @@
     
     <div class="login-box">
       <div class="login-logo">
-        <img src="<?=base_url()?>assets/img/logo.jpg" style="height:60%; width:60% ;"> 
+        <img src="<?=base_url()?>assets/img/moro_logo.jpg" style=" width:30% ;"> 
       </div><!-- /.login-logo -->
       <div class="login-box-body">
 

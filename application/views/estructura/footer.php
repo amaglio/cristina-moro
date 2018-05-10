@@ -1,69 +1,4 @@
-		<?/*
-		<footer>
- 
-				<div id="footer">
-				       <section id="index-link">
-						    <div class="container">
-						        <div class="row">
-						            <div class="col-md-3">
-						                <div>
-						                    <h5>MORO SPA</h5>
-						                    <P style="color:#fff">Encontrarás un equipo de profesionales calificados para brindarte soluciones personalizadas en las áreas de medicina estética integral, cosmiatría, masoterapia y tratamientos naturales no invasivos.</P>
-						                    
-						                </div>
-						            </div>
-						            <div class="col-md-3">
-						                <div>
-						                    <h5>PRODUCT</h5>
-						                    <ul>
-						                    <li><a href="#"> Servicios Spa </a></li>
-						                    <li><a href="#"> Productos </a></li>
-						                    <li><a href="#"> Cursos </a></li>
-						                    <li><a href="#"> Historia  </a></li>
-						                    <li><a href="#"> Contacto </a></li>
-						                    </ul>
-						                </div>
-						            </div>
-						            <div class="col-md-3">
-						                <div>
-						                    <h5>Sede microcentro</h5>
-						                    <ul>
-							                    <li><a href="#"> San Martín 522 Piso 3° 5. Capital Federal </a></li>
-							                    <li><a href="#"> (5411) 4393.1090/1099</a></li>
-							                    <li><a href="#"> EMAIL</a></li>
-						                    </ul>
-						                </div>
-						            </div>
-						            <div class="col-md-3">
-						               <div>
-						                    <h5>Sede zona sur- Bernal</h5>
-						                    <ul>
-							                    <li><a href="#"> 9 de Julio 146 “A” </a></li>
-							                    <li><a href="#">  (5411) 4252.4630/4251.6533 </a></li>
-							                    <li><a href="#"> EMAIL</a></li>
-						                    </ul>
-						                </div>
-						            </div>
-						        </div>
-						    </div>
-					   </section>
-
-					   <section id="index-copyright">
-					   		<div class="container">
-						        <div class="row">
-						        	<div class="col-md-12" id="copyright">
-						        		© 2018 Todos los derechos reservados | Moro Spa
-						        	</div>
-						        </div>
-						    </div>
-					   </section>
-				</div>
-	 
-
-		</footer> */ ?>
- 		
-	 
-      	<!--Footer-->
+     	<!--Footer-->
       	<footer class="page-footer font-small stylish-color-dark pt-4 mt-4" >
       		
  		  	<div class=" "  id="footer_link" >
@@ -73,8 +8,8 @@
 		      
 		                  <!--First column-->
 		                  <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-		                      <h6 class="text-uppercase mb-4 font-weight-bold footer_seccion">Moro SPA</h6>
-		                      <p>Encontrarás un equipo de profesionales calificados para brindarte soluciones personalizadas en las áreas de medicina estética integral, cosmiatría, masoterapia y tratamientos naturales no invasivos..</p>
+		                      <h6 class="text-uppercase mb-4 font-weight-bold footer_seccion">MORO Salud y Belleza</h6>
+		                      <p>Somos un equipo de profesionales con más de 30 años de experiencia local e internacional que a diario trabajamos para para brindarte soluciones personalizadas en las áreas de medicina estética integral, cosmiatría, masoterapia y tratamientos naturales no invasivos.</p>
 		                  </div>
 		                  <!--/.First column-->
 		      
@@ -82,12 +17,33 @@
 		      
 		                  <!--Second column-->
 		                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-		                      <h6 class="text-uppercase mb-4 font-weight-bold footer_seccion">Link</h6>
-		                      <p><a href="#!" class="footer_link_util" ><i class="fa  fa-chevron-right"></i> Servicios Spa</a></p>
-		                      <p><a href="#!" class="footer_link_util"><i class="fa  fa-chevron-right"></i> Productos</a></p>
-		                      <p><a href="#!" class="footer_link_util"><i class="fa  fa-chevron-right"></i> Cursos</a></p>
-		                      <p><a href="#!" class="footer_link_util"><i class="fa  fa-chevron-right"></i> Historia</a></p>
-		                      <p><a href="#!" class="footer_link_util"><i class="fa  fa-chevron-right"></i> Contacto</a></p>
+								<h6 class="text-uppercase mb-4 font-weight-bold footer_seccion"> </h6>
+								<p>
+									<a href="<?=site_url('historia/index')?>" class="footer_link_util">
+										<i class="fa fa-chess-queen"> </i> 
+										 Los MORO
+									</a>
+								</p>
+								<p>
+									<a href="<?=site_url('producto/index')?>" class="footer_link_util">
+										<i class="fa fa-chess-queen"> </i>  Productos
+									</a>
+								</p>
+								<p>
+									<a href="<?=site_url('servicio/index')?>" class="footer_link_util" >
+										<i class="fa fa-chess-queen"> </i>  Medical Spa
+									</a>
+								</p>
+								<p>
+									<a href="<?=site_url('curso/index')?>" class="footer_link_util">
+										<i class="fa fa-chess-queen"> </i>  Cursos
+									</a>
+								</p>
+								<p>
+									<a href="<?=site_url('contacto/index')?>" class="footer_link_util">
+										<i class="fa fa-chess-queen"> </i>  Contacto
+									</a>
+								</p>
 		                  </div>
 		                  <!--/.Second column-->
 		      
@@ -97,9 +53,13 @@
 		                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
 		                      <h6 class="text-uppercase mb-4 font-weight-bold footer_seccion">Sede Microcentro</h6>
 		                      <p><i class="fa fa-home mr-3"></i>San Martín 522 Piso 3° 5</p>
-		                      <p><i class="fa fa-envelope mr-3"></i> info@gmail.com</p>
+		                      <p><i class="fa fa-envelope mr-3"></i> info@cristinamoro.com.ar </p>
 		                      <p><i class="fa fa-phone mr-3"></i> 4393.1090/1099</p>
-		 
+		 					  <p><i class="fab fa-whatsapp mr-3"></i> 
+			 					  <a class="link_what" href=" https://api.whatsapp.com/send?phone=541131948448">
+			 					  (	5411) 3194-8448 
+			 					  </a>
+		 					  </p>
 		                  </div>
 		                  <!--/.Fourth column-->
 		      
@@ -109,9 +69,15 @@
 		                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
 		                      <h6 class="text-uppercase mb-4 font-weight-bold footer_seccion">Sede Bernal</h6>
 		                      <p><i class="fa fa-home mr-3"></i> 9 de Julio 146 “A”</p>
-		                      <p><i class="fa fa-envelope mr-3"></i> info@gmail.com</p>
+		                      <p><i class="fa fa-envelope mr-3"></i> medicalspamoro@gmail.com </p>
 		                      <p><i class="fa fa-phone mr-3"></i> (5411) 4252.4630</p>
 		                      <p><i class="fa fa-phone mr-3"></i> (5411) 4251.6533</p>
+		                      <p>
+		                      	<i class="fab fa-whatsapp mr-3"></i>
+		                      		<a class="link_what" href=" https://api.whatsapp.com/send?phone=541151514585">
+		                      	 		(5411) 5151-4585 
+		                      	 	</a>
+		                      	</p>
 		                  </div>
 		                  <!--/.Fourth column-->
 		      
@@ -127,7 +93,7 @@
 	                  <div class="col-md-8 col-lg-8">
 	      
 	                      <!--Copyright-->
-	                      <p class="text-center text-md-left grey-text">© 2018 Copyright:  <strong> Moro SPA </strong> </p>
+	                      <p class="text-center text-md-left grey-text">© 2018 Copyright:  <strong>  MORO Salud y Belleza </strong> </p>
 	                      <!--/.Copyright-->
 	      
 	                  </div>
@@ -139,10 +105,21 @@
 	                      <!--Social buttons-->
 	                      <div class="text-center text-md-right">
 	                          <ul class="list-unstyled list-inline">
-	                              <li class="list-inline-item"><a class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-facebook"></i></a></li>
-	                              <li class="list-inline-item"><a class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-twitter"></i></a></li>
-	                              <li class="list-inline-item"><a class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-google-plus"></i></a></li>
-	                              <li class="list-inline-item"><a class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-linkedin"></i></a></li>
+	                              	<li class="list-inline-item">
+	                              		<a target="_blank" class=" btn-sm rgba-white-slight mx-1 iconos_footer" href="https://www.facebook.com/cristinamorook/">
+	                              			<i class="fab fa-facebook-f"></i>
+	                              		</a>
+	                              	</li> 
+	                              	<li class="list-inline-item">
+	                              		<a target="_blank" class=" btn-sm rgba-white-slight mx-1 iconos_footer">
+	                              			<i class="fab fa-google-plus-g"></i>
+	                              		</a>
+	                              	</li>
+	                              	<li class="list-inline-item">
+	                              		<a target="_blank" class=" btn-sm rgba-white-slight mx-1 iconos_footer">
+	                              			<i class="fab fa-linkedin-in"></i>
+	                              		</a>
+	                              	</li>
 	                          </ul>
 	                      </div>
 	                      <!--/.Social buttons-->
@@ -309,20 +286,28 @@
 
 		          rules :{
 
-						nombre_apellido : {
+						nombre : {
+						  	required: true
+						},
+						apellido : {
 						  	required: true
 						},
 						email : {
-						  	required: true
+						  	required: true,
+						  	email: true
 						}  
 		          },
 		          messages : {
 
-	                  	nombre_apellido : {
+	                  	nombre : {
 	                      required: "Debe ingresar su nombre"
 	                  	},
+	                  	apellido : {
+	                      required: "Debe ingresar su apellido"
+	                  	},
 	                  	email : {
-	                      required: "Debe ingresar su email"
+	                      required: "Debe ingresar su email",
+	                      email: "Email tiene un formato erroneo"
 	                  	}  
 		          } 
 		      });    

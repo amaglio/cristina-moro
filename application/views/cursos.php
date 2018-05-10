@@ -34,7 +34,7 @@
 								</select>
 							</div>
 							<div class="form-group col-lg-2">
-								<button type="submit" class="btn btn-block btn-primary my-1"><i class="fa fa-search" style="color:white !important;"></i>Buscar</button>
+								<button type="submit" class="btn btn-block btn-primary my-1"><i class="fa fa-search" style="color:white !important;"></i>  Buscar</button>
 							</div>
 						</form>
 
@@ -55,8 +55,8 @@
 							</div>
 							<div class="col-lg-8" >
 								
-								<a href='<?=site_url("curso/ver_curso/$id_curso")?>'>
-									<h5><?=$row['nombre']?></h5> 
+								<a class="item_nombre" href='<?=site_url("curso/ver_curso/$id_curso")?>'>
+									<?=$row['nombre']?>	
 								</a>
 
 								<div class="form-group row">
@@ -85,6 +85,12 @@
 								</div>
 							 
 								<p> <?=$row['descripcion']?> </p>
+								<p> 
+									<a class="btn btn-primary btn-xs btn-ver-programa" href='<?=site_url("curso/ver_curso/$id_curso")?>'>
+										Ver programa
+									</a> 
+
+								</p>
 							</div> 
 						</div>
 						
@@ -93,7 +99,8 @@
 			</div>
 
 			<div class="col-lg-2" >
-			  AVALES
+				<h5 id="titulo_curso"> Reconocidos por </h5>
+			    <?php ver_avales(); ?>
 			</div>
 
 			 

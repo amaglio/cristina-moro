@@ -19,16 +19,34 @@ class Curso extends CI_Controller {
 	}
 
 	public function ver_curso($id_curso)
-	{
- 		$data['curso'] = $this->Curso_model->get_informacion_curso($id_curso);
- 		$data['cursos_tema'] = $this->Curso_model->get_tema_curso();
-		$data['cursos_modalidad'] = $this->Curso_model->get_modalidad_curso();
+	{	
+		$_POST['id_curso'] = $id_curso; 
+		$this->form_validation->set_message('comprobar_curso_existente', 'El curso no existe.');
 
-		$data['cursos'] = $this->Curso_model->get_curso_relacionados($data['curso']['id_modalidad_curso'],$data['curso']['id_tema_curso'],$id_curso);
+		$this->form_validation->set_data($_POST);
 
- 		$this->load->view('estructura/head.php' );
-		$this->load->view('curso.php',$data);
-		$this->load->view('estructura/footer.php' );
+		if ( $this->form_validation->run('ver_curso') == FALSE ):
+
+			chrome_log("No paso validacion"); 
+			redirect('home','refresh');
+
+		else:
+
+			chrome_log("Paso validacion"); 
+
+			$data['curso'] = $this->Curso_model->get_informacion_curso($id_curso);
+	 		$data['cursos_tema'] = $this->Curso_model->get_tema_curso();
+			$data['cursos_modalidad'] = $this->Curso_model->get_modalidad_curso();
+
+			$data['cursos'] = $this->Curso_model->get_curso_relacionados($data['curso']['id_modalidad_curso'],$data['curso']['id_tema_curso'],$id_curso);
+
+	 		$this->load->view('estructura/head.php' );
+			$this->load->view('curso.php',$data);
+			$this->load->view('estructura/footer.php' );
+
+		endif;
+
+ 		
 	}
  	
 	public function buscar_cursos()
@@ -46,8 +64,14 @@ class Curso extends CI_Controller {
 			chrome_log("Paso validacion");
 			$data['cursos'] = $this->Curso_model->buscar_cursos($this->input->post());
  
-  
-			
+  			if($this->input->post('id_modalidad'))	
+  				$data['descripcion_modalidad'] = $this->Curso_model->get_descripcion_modalidad($this->input->post('id_modalidad'));
+
+  		 
+  			if($this->input->post('id_tema'))
+  				$data['descripcion_tema'] = $this->Curso_model->get_descripcion_tema($this->input->post('id_tema'));
+
+	 
 			$data['cursos_tema'] = $this->Curso_model->get_tema_curso();
 			$data['cursos_modalidad'] = $this->Curso_model->get_modalidad_curso();
 			$this->load->view('estructura/head.php' );
@@ -70,4 +94,12 @@ class Curso extends CI_Controller {
         	return FALSE;
        }
     }
+
+    public function comprobar_curso_existente($id_curso=null)
+	{
+		if($this->Curso_model->existe_curso($id_curso)) 
+			return false; 
+		else 
+			return true;
+	}
 }

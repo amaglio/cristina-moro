@@ -56,17 +56,9 @@
 			</div> 
 
 			<div class="col-lg-4" >
-				<form name="form_contacto" id="form_contacto" method="post" action="<?=site_url('contacto/enviar_contado')?>" >
-		 				
-		 				<input id="nombre_apellido" type="text" class="form-control" name="nombre_apellido" placeholder="Nombre y apellido *"> 
-		 				<input id="email" type="text" class="form-control" name="email" placeholder="Email *">  
-
-		 				<input id="telefono" type="text" class="form-control" name="telefono" placeholder="Telefono"> 
-
-		 				<textarea id="mensaje" class="form-control" name="mensaje" placeholder="Mensaje"></textarea> 
-		 				<button class="btn btn-primary btn-block"  >Enviar</button>
-
-					</form>
+				 
+				<?php ver_formulario_contacto(); ?>
+				 
 			</div>
 		</div>
 		<!-- Servicios -->

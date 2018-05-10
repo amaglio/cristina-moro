@@ -35,10 +35,10 @@
     }
     
     .list-control {
-      position: absolute;
+      /*position: absolute;*/
       width: 100%;
       left: 0;
-      font-size: 20px;
+      font-size: 22px;
       color: #fff;
       text-align: center;
       text-shadow: 0 1px 2px rgba(0,0,0,.6);
@@ -46,6 +46,7 @@
       filter: alpha(opacity=50);
       opacity: .4;
     }
+
     .list .up{
       top: 0;
       background: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
@@ -63,6 +64,7 @@
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
       
     }
+
     .list .down{
       bottom: 0;
       background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6-15 */
@@ -82,8 +84,9 @@
   
     .control-height
     {
-      height: 45px;
-      background-color: #97700075 !important
+          height: 30px !important;
+    background-color: #97700075 !important;
+     
     }
     
     .list .list-group
@@ -96,10 +99,7 @@
       top: 13px;
     }
 
- 	  .control-height
-    {
-      height: 20px !important
-    }
+ 	 
 
 /* --- END LISTA CURSOS HOME --- */
 
@@ -124,39 +124,7 @@
 	/* ---------- */
 
 
-    /* varios */ 
-    .active{
-        color: #b58738;
-    }
-
-    .list-control{
-          position: relative;
-    }
     
-    a.link_menu:hover { 
-        color: #b58738;
-        text-decoration: none;
-    }
-
-    h5{
-       color: #b58738;
-    }
-
-    a:hover {
-      text-decoration: none !important;
-    }
-
-    .btn-primary {
-            color: #fff;
-    background-color: #b68838;
-    border-color: #826027;
-    }
-
-    .btn-primary:hover {
-        color: #fff;
-        background-color: #a97d32;
-        border-color: #694e03;
-    }
 
     .imagen_carrusel{ 
   	   height:350px; 
@@ -171,12 +139,13 @@
         top: 10%;
         /* left: 10%; */
         font-size: 30px;
-        background-color: #94720078;
+        /*background-color: #94720078;*/
+        background-color: #94720085;
         padding: 30px 20px;
 
         color: white;
-        text-shadow: blanchedalmond;
-        text-shadow: 0 0 3px #000000, 0 0 2px #000000;
+        /*text-shadow: blanchedalmond;
+        text-shadow: 0 0 3px #000000, 0 0 2px #000000;*/
         width: -webkit-fill-available;
         margin-right: 30px;
 
@@ -217,6 +186,7 @@
 		padding: 10px;
     background-color: #ece4d0;
     color: #1c2025;
+        width: 98px;
 	}
 
   a[class="nombre_curso"] { font-weight: bold }
@@ -246,5 +216,5 @@
   }
 
   #titulo_curso{
-    font-size: 16px;
+    font-size: 18px;
   }

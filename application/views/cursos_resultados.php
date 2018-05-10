@@ -41,6 +41,25 @@
 					</div>
 
 				</div>
+
+				<?php if(count($cursos) > 0): ?>
+ 			
+		 			<div class="row div_row row_resultado" >
+		 				<div class="col-lg-12" >
+		 					
+		 					<?php if(isset($descripcion_modalidad)) echo $descripcion_modalidad; ?>
+		 					
+		 					<?php 	if(isset($descripcion_tema)):
+		 								
+		 								if(isset($descripcion_modalidad))
+		 									echo ", ".$descripcion_tema; 
+		 								else
+		 									echo $descripcion_tema; 
+		 							endif;
+		 					?>
+
+		 				</div>
+		 			</div>
 				
 					
 					<? foreach ($cursos as $row):
@@ -56,8 +75,8 @@
 							</div>
 							<div class="col-lg-8" >
 		
-								<a href='<?=site_url("curso/ver_curso/$id_curso")?>'>
-									<h5><?=$row['nombre']?></h5> 
+								<a class="item_nombre" href='<?=site_url("curso/ver_curso/$id_curso")?>'>
+										<?=$row['nombre']?> 
 								</a>
 								<div class="form-group row">
 								    <label class="col-sm-2">Duracion</label>
@@ -85,15 +104,25 @@
 								</div>
 							 
 								<p> <?=$row['descripcion']?> </p>
+								<a class="btn btn-primary btn-xs btn-ver-programa" href='<?=site_url("curso/ver_curso/$id_curso")?>'>
+										Ver programa
+									</a> 
 							</div> 
 						</div>
 						
 					<? endforeach; ?>
+
+				<?php else: ?>
+
+						<span style="color:red">No se han encontrado resultados </span>
+
+				<?php endif; ?>
 			  
 			</div>
 
 			<div class="col-lg-2" >
-			  AVALES
+				<h5 id="titulo_curso"> Reconocidos por </h5>
+			 	<?php ver_avales(); ?>
 			</div>
 
 			 

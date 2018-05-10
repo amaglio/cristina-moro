@@ -4,6 +4,11 @@
 		<div class="container">
 			<div class="row div_buscador">
 				<div class="col-lg-12" >
+				  Data introductoria sobre el poder de la aromaterapia científica. 
+				</div>
+			</div>
+			<div class="row div_buscador">
+				<div class="col-lg-12" >
 				  	<form id="form_buscar_productos" name="form_buscar_productos" class="form-inline" method="post" action="<?=site_url('producto/buscar_productos')?>">
 							<div class="form-group col-lg-5" >
 								<label for="id_producto_tipo" class="col-lg-2">Tipo</label>
@@ -46,8 +51,8 @@
 								<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/productos/<?=$productos[$i]['foto']?>">
 							</div>
 							<div class="col-lg-6" >
-								<a href='<?=site_url("producto/ver_producto/$id_producto")?>'>
-									<h5><?=$productos[$i]['nombre']?></h5> 
+								<a class="item_nombre" href='<?=site_url("producto/ver_producto/$id_producto")?>'>
+									<?=$productos[$i]['nombre']?> 
 								</a>
 								 
 								<div class="form-group row">
@@ -72,8 +77,8 @@
 										<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/productos/<?=$productos[$i]['foto']?>">
 									</div>
 									<div class="col-lg-6" >
-										<a href='<?=site_url("producto/ver_producto/$id_producto")?>'>
-											<h5><?=$productos[$i]['nombre']?></h5> 
+										<a class="item_nombre" href='<?=site_url("producto/ver_producto/$id_producto")?>'>
+											<?=$productos[$i]['nombre']?>	
 										</a>
 												 
 										<div class="form-group row">
@@ -102,8 +107,8 @@
 										<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/productos/<?=$productos[$i]['foto']?>">
 									</div>
 									<div class="col-lg-6" >
-										<a href='<?=site_url("producto/ver_producto/$id_producto")?>'>
-											<h5><?=$productos[$i]['nombre']?></h5> 
+										<a class="item_nombre" href='<?=site_url("producto/ver_producto/$id_producto")?>'>
+												<?=$productos[$i]['nombre']?> 
 										</a>
 										 
 										<div class="form-group row">

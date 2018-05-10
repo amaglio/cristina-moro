@@ -86,6 +86,20 @@ function buscar_servicios($array)
     return $resultado->result_array();
 }
 
+function existe_servicio($id_servicio)
+{
+  
+  $query = $this->db->query(" SELECT  *
+                              FROM  servicio_spa
+                              WHERE id_servicio_spa = ?", array($id_servicio) );
+
+
+  if($query->num_rows() > 0)
+    return false;
+  else
+    return true;
+}
+
 
 }
 

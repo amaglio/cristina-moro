@@ -50,10 +50,9 @@
 								<a href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
 									<h5><?=$servicios_spa[$i]['titulo']?></h5> 
 								</a>
-								<div class="form-group row">
-								    <label class="col-sm-2">Tipo</label>
+								<div class="form-group row"> 
 								    <div class="col-sm-3">
-								     <?=$servicios_spa[$i]['descripcion_tipo_servicio']?>
+								     <label><?=$servicios_spa[$i]['descripcion_tipo_servicio']?></label>
 								    </div>
 								</div>
 								<div class="form-group row">
@@ -83,10 +82,9 @@
 										<a href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
 											<h5><?=$servicios_spa[$i]['titulo']?></h5> 
 										</a>
-										<div class="form-group row">
-										    <label class="col-sm-2">Tipo</label>
+										<div class="form-group row"> 
 										    <div class="col-sm-8">
-										     <?=$servicios_spa[$i]['descripcion_tipo_servicio']?>
+										     	<label><?=$servicios_spa[$i]['descripcion_tipo_servicio']?></label>
 										    </div>
 										</div>
 										<div class="form-group row">

@@ -32,7 +32,14 @@
 	<section id="servicios_spa">
 
 		<div class="container">
- 
+
+	<?php if(count($servicios_spa) > 0): ?>
+ 			
+ 			<div class="row div_row row_resultado" >
+ 				<div class="col-lg-12" >
+ 					<?=$servicios_spa[0]['descripcion_tipo_servicio']?>
+ 				</div>
+ 			</div>
 
 			<?  for ($i=0; $i < count($servicios_spa) ; $i++): 
 
@@ -47,8 +54,8 @@
 								<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/servicios/<?=$servicios_spa[$i]['foto']?>">
 							</div>
 							<div class="col-lg-8" >
-								<a href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
-									<h5><?=$servicios_spa[$i]['titulo']?></h5> 
+								<a class="item_nombre"  href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
+									<?=$servicios_spa[$i]['titulo']?>
 								</a>
 								<div class="form-group row">
 								    <label class="col-sm-2">Tipo</label>
@@ -80,8 +87,8 @@
 										<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/servicios/<?=$servicios_spa[$i]['foto']?>">
 									</div>
 									<div class="col-lg-8" >
-										<a href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
-											<h5><?=$servicios_spa[$i]['titulo']?></h5> 
+										<a class="item_nombre"  href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
+											<?=$servicios_spa[$i]['titulo']?>
 										</a>
 										<div class="form-group row">
 										    <label class="col-sm-2">Tipo</label>
@@ -104,7 +111,14 @@
 				</div>
  
 			<? endfor; ?>
-		 
+
+	<?php else: ?>
+
+			<span style="color:red">No se han encontrado resultados </span>
+
+	<?php endif; ?>
+
+			
 
 		</div>
 

@@ -181,6 +181,25 @@ class Administrador extends CI_Controller {
 			$this->_example_output($output);
 	}
 
+	public function contactos()
+	{
+			$crud = new grocery_CRUD();
+
+			$crud->set_theme('datatables');
+			$crud->set_table('contacto');
+			$crud->set_subject('Contactos'); 
+			$crud->columns('nombre', 'apellido','email', 'telefono', 'ubicacion', 'comentario', 'url_referer'  );
+			$crud->change_field_type('description', 'text');  
+ 			$crud->unset_add();
+			$crud->unset_edit();
+
+			$crud->callback_column('url_referer', array($this, '_full_text'));
+
+			$output = $crud->render();
+
+			$this->_example_output($output);
+	}
+
  	public function opiniones_facebook()
 	{
 			$crud = new grocery_CRUD();
@@ -200,6 +219,11 @@ class Administrador extends CI_Controller {
 
 	function add_field_callback_1($value, $row)
 	{
-	return $value.'';
+		return $value.'';
+	}
+
+	function _full_text($value, $row)
+	{
+	return $value = wordwrap($value, 30, "<br>", true);
 	}
 }

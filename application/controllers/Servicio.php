@@ -24,13 +24,26 @@ class Servicio extends CI_Controller {
 	{	
 		chrome_log("Servicio/ver_servicio");
 
-		$data['servicio'] = $this->Servicio_model->get_informacion_servicio($id_servicio);
-		$data['servicio_tipo'] = $this->Servicio_model->get_tipo_servicio_spa();
-		$data['servicios_spa'] = $this->Servicio_model->get_servicios_relacionados( $data['servicio']['id_tipo_servicio'], $data['servicio']['id_servicio_spa']);
- 
- 		$this->load->view('estructura/head.php' );
-		$this->load->view('servicio.php',$data);
-		$this->load->view('estructura/footer.php' );
+		$_POST['id_servicio'] = $id_servicio; 
+		$this->form_validation->set_message('comprobar_servicio_existente', 'El servicio no existe.');
+		$this->form_validation->set_data($_POST);
+
+		if ( $this->form_validation->run('ver_servicio') == FALSE ):
+
+			chrome_log("No paso validacion"); 
+			redirect('home','refresh');
+
+		else:
+
+			$data['servicio'] = $this->Servicio_model->get_informacion_servicio($id_servicio);
+			$data['servicio_tipo'] = $this->Servicio_model->get_tipo_servicio_spa();
+			$data['servicios_spa'] = $this->Servicio_model->get_servicios_relacionados( $data['servicio']['id_tipo_servicio'], $data['servicio']['id_servicio_spa']);
+	 
+	 		$this->load->view('estructura/head.php' );
+			$this->load->view('servicio.php',$data);
+			$this->load->view('estructura/footer.php' );
+
+		endif;
 	}
  	
  	public function buscar_servicios()
@@ -58,5 +71,13 @@ class Servicio extends CI_Controller {
 
 		endif;	
 	}	
+
+	public function comprobar_servicio_existente($id_servicio=null)
+	{
+		if($this->Servicio_model->existe_servicio($id_servicio)) 
+			return false; 
+		else 
+			return true;
+	}
 
 }

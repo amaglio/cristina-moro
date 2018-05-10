@@ -85,6 +85,20 @@ class Producto_model extends CI_Model {
 
   	return $resultado->result_array();
   }
+
+  function existe_producto($id_producto)
+  {
+    
+    $query = $this->db->query(" SELECT  *
+                                    FROM  producto
+                                    WHERE id_producto = ?", array($id_producto) );
+
+
+    if($query->num_rows() > 0)
+      return false;
+    else
+      return true;
+  }
 }
 
 /* End of file  */

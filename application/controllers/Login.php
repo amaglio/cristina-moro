@@ -33,7 +33,7 @@ public function procesa_logueo()
 
 		if( $this->input->post("usuario") == 'spamoro' &&  $this->input->post("clave") == 'spamoro2018'  )
 		{
-			$this->session->set_userdata('alimentary_id',  "alimentary_id" );
+			$this->session->set_userdata('moro_id',  "moro_id" );
 			$this->session->set_flashdata('mensaje', 'Validacion exitosa');
 			redirect('Administrador/index/','refresh');
 		}
@@ -50,7 +50,7 @@ public function procesa_logueo()
 
 public function logout()
 {
-	$this->session->unset_userdata('alimentary_id');
+	$this->session->unset_userdata('moro_id');
 
 	$this->db->close();
 	session_destroy();

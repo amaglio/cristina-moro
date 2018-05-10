@@ -99,6 +99,9 @@ foreach($css_files as $file): ?>
           <a href='<?php echo site_url('administrador/carrusel')?>'><i class="fa fa-desktop"></i> Carrusel</a>
         </li>
         <li>
+          <a href='<?php echo site_url('administrador/contactos')?>'><i class="fa fa-at"></i> Contactos</a>
+        </li>
+        <li>
         	<a href='<?php echo site_url('login/logout')?>'><i  class="fa fa-power-off" ></i> Salir</a>
         </li>
 

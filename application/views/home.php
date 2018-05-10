@@ -33,7 +33,7 @@
 					                    		
 					                    	
 					                    	<? 	if(isset($row['link'])): ?>
-					                    		<a href="<?=$row['link']?>" class="btn btn-primary btn-xs" style="text-shadow:none; font-size: 14px">Ver mas</a>
+					                    		<a href="<?=$row['link']?>" class="btn btn-primary btn-xs" style="text-shadow:none; font-size: 14px">Ver más</a>
 					                    		 
 					                    	<?	endif;	?>
 
@@ -55,12 +55,14 @@
 				<div class="col-lg-4" >
 					<div class="country">
  
- 						<h5 id="titulo_curso"> Nuestros próximos cursos </h5>
+ 						<h5 id="titulo_curso"> Próximos cursos </h5>
+
 	            		<a class="list-control control-height up" href="#" >
+
 							<i class="fa fa-angle-up " style="width: -webkit-fill-available; "></i> 
 						</a>
 			 
-	             		<div class="list">
+	             		<div class="list" style=" height: 265px">
 							
 							<div class="cities-list">
  
@@ -72,15 +74,16 @@
 									?>
 
 										<div class=" row row-striped ">
-											<div class="col-3 text-right">
-												<span class="badge badge-secondary" style="font-size: 15px">
+											<div class="col-4 text-right">
+												<span class="badge" style="font-size: 15px">
+													<i class="far fa-calendar-alt"></i>
 												<?
 													$phpdate = strtotime( $row_cursos['fecha']);  
-													echo date( 'd - M', $phpdate );  
+													echo "&nbsp;".date( 'd - M', $phpdate );  
 												?>
 												</span> 
 											</div>
-											<div class="col-9">
+											<div class="col-8">
 												<span class="text-uppercase titulo_curso">
 												 
 														<a class="nombre_curso" href='<?=site_url("curso/ver_curso/$id_curso")?>'><?=$row_cursos['nombre']?></a>
@@ -108,6 +111,7 @@
 	             		<a class="list-control control-height down" href="#">
 	           					<i class="fa fa-angle-down " style="width: -webkit-fill-available; "></i> 
 	           			</a>
+
 	              	</div>
 				</div>
 			</div>
@@ -134,13 +138,13 @@
 							</div>
 							<div class="col-lg-6" >
 								
-								<a class="nombre_producto" href='<?=site_url("producto/ver_producto/$id_producto")?>'>
+								<a class="item_nombre" href='<?=site_url("producto/ver_producto/$id_producto")?>'>
 										<?=$productos[$i]['nombre']?>	
 								</a>
 
 								<div class="form-group row">
 									<div class="col-sm-12">
-								    	<label>Tipo: </label> <?=$productos[$i]['descripcion_tipo_producto']?>
+								    	<label>  <?=$productos[$i]['descripcion_tipo_producto']?> </label>
 								   </div>
 								</div>
 
@@ -165,12 +169,12 @@
 										<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/productos/<?=$productos[$i]['foto']?>">
 									</div>
 									<div class="col-lg-6" >
-										<a class="nombre_producto" href='<?=site_url("producto/ver_producto/$id_producto")?>'>
+										<a class="item_nombre" href='<?=site_url("producto/ver_producto/$id_producto")?>'>
 											 <?=$productos[$i]['nombre']?> 
 										</a>
 										<div class="form-group row">
 											<div class="col-sm-12">
-										    	<label>Tipo: </label> <?=$productos[$i]['descripcion_tipo_producto']?>
+										    	<label>  <?=$productos[$i]['descripcion_tipo_producto']?> </label>
 										   </div>
 										</div> 
 										<div class="form-group row">
@@ -196,12 +200,12 @@
 										<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/productos/<?=$productos[$i]['foto']?>">
 									</div>
 									<div class="col-lg-6" >
-										<a class="nombre_producto" href='<?=site_url("producto/ver_producto/$id_producto")?>'>
+										<a class="item_nombre" href='<?=site_url("producto/ver_producto/$id_producto")?>'>
 											 <?=$productos[$i]['nombre']?> 
 										</a>
 										<div class="form-group row">
 											<div class="col-sm-12">
-										    	<label>Tipo: </label> <?=$productos[$i]['descripcion_tipo_producto']?>
+										    	<label><?=$productos[$i]['descripcion_tipo_producto']?>  </label> 
 										   </div>
 										</div> 
 										<div class="form-group row">
@@ -247,21 +251,11 @@
 								<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/servicios/<?=$servicios_spa[$i]['foto']?>">
 							</div>
 							<div class="col-lg-8" >
-								
-								<a class="nombre_servicio" href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
-									 <?=$servicios_spa[$i]['titulo']?>  
-								</a>
-								<div class="form-group row">
-								    <label class="col-sm-2">Tipo</label>
-								    <div class="col-sm-3">
-								     <?=$servicios_spa[$i]['descripcion_tipo_servicio']?>
-								    </div>
-								</div>
-								<div class="form-group row">
-									<div class="col-sm-12">
-								    	<?=$servicios_spa[$i]['descripcion']?>
-								   </div>
-								</div>
+								<a class="item_nombre" href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
+									<?=$servicios_spa[$i]['titulo']?>  
+								</a><br>
+								 <label ><?=$servicios_spa[$i]['descripcion_tipo_servicio']?></label>  <br>
+								 <?=$servicios_spa[$i]['descripcion']?></p>	 
 							</div>
 						</div>  
 					</div>
@@ -281,21 +275,11 @@
 										<img class="img-rounded img-thumbnail thumbnail" src="<?=base_url()?>assets/img/servicios/<?=$servicios_spa[$i]['foto']?>">
 									</div>
 									<div class="col-lg-8" >
-										<a class="nombre_servicio" href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
-											<?=$servicios_spa[$i]['titulo']?>	
-										</a> 
-										<div class="form-group row">
-										    <label class="col-sm-2">Tipo</label>
-										    <div class="col-sm-8">
-										     <?=$servicios_spa[$i]['descripcion_tipo_servicio']?>
-										    </div>
-										</div>
-										<div class="form-group row">
-											<div class="col-sm-12">
-										    	<?=$servicios_spa[$i]['descripcion']?>
-										   </div>
-										</div>
-
+										<a class="item_nombre" href='<?=site_url("servicio/ver_servicio/$id_servicio")?>'>
+											<?=$servicios_spa[$i]['titulo']?>  
+										</a><br>
+										 <label ><?=$servicios_spa[$i]['descripcion_tipo_servicio']?></label>  <br>
+										 <?=$servicios_spa[$i]['descripcion']?></p>	 
 									</div>
 								</div>  
 							</div> 
@@ -306,7 +290,7 @@
  
 				<? endfor; ?>
 					<div class="col-lg-12" style="text-align: right" >
-						<a href="<?=site_url('servicio/index')?>" class="btn btn_home"> <i class="fa fa-plus"></i> Servicios </a>
+						<a href="<?=site_url('servicio/index')?>" class="btn btn_home"> <i class="fa fa-plus"></i> Medical SPA </a>
 					</div>
 			</div>
 

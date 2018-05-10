@@ -63,14 +63,14 @@
 						<img class="img-rounded   foto_historia img-thumbnail" src="<?=base_url()?>assets/img/historia/rodrigo.jpg">
 					</div>
 					<div class="col-lg-12" >
-						<p>CPN.Contador Nacional en la UCALP (Universidad Católica Argentina de la Plata).</p>
+						<p>CPN.Contador Nacional en la UCALP (Universidad Católica Argentina de la Plata). M t. 397 f.134 </p>
 						<p> Director General de su propia empresa,  Propietario de dos Centros "Moro Medical SPA" ubicados en el Centro de Buenos Aires (punto urbano) y en Bernal Pcia. de Bs. As (punto residencial)</p>
 						<p>Tesorero de F.A.C.E. (Federación Argentina de Cosmetólogos y Esteticistas)</p>
 						<p>Vicepresidente de C.I.C.E.A (Centro Internacional y Científico de Estética Aplicada)</p>
 						<p> Asesora en distintos SPA y centros de estética del país y del extranjero, para la capacitación de profesionales y/o administrativos de la salud y la belleza. Desde hace mas de mas de una década.</p>
 						<p>Disertante en congresos nacionales e internacionales.</p>
 						<p>Marketing estratégico en UBA. (Universidad de Buenos Aires)</p>
-						<p> Docente de Marketing en formación de extensión universitaria, Facultad de Medicina, UBA. Entrenó a la fuerza de ventas de Lidherma y fue convocado por L´Oreal para encabezar las disertaciones de marketing en servicios de estética y peluquería en Guayaquil, Ecuador.</p> 
+						<p> Docente de Marketing en formación de extensión universitaria, Facultad de Medicina, UBA.</p> 
 						
 					</div>
 
